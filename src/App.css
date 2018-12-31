@@ -1,0 +1,21 @@
+.app {
+  padding: 20px;
+}
+
+.autosuggestions {
+  margin-top: 20px;
+  border: 1px solid gray;
+  padding: 10px;
+  width: 500px;
+  min-height: 200px;
+}
+
+.favorite-red {
+  color: red;
+  cursor: pointer;
+}
+
+.favorite-gray {
+  color: gray;
+  cursor: pointer;
+}
