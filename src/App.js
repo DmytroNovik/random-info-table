@@ -139,7 +139,7 @@ class App extends Component {
         key: 'favorite',
         dataIndex: 'favorite',
         defaultSortOrder: 'ascend',
-        sorter: (a, b) => a.favorite,
+        sorter: (a, b) => (a.favorite === b.favorite) ? 0 : a.favorite ? -1 : 1,
         render: (text, record) => (
           <Icon theme="filled" onClick={()=> this.props.setFavorite(record)} className={record.favorite ? 'favorite-red' : 'favorite-gray'} type="heart" />
         )
