@@ -101,7 +101,7 @@ class App extends Component {
         key: 'id',
         dataIndex: 'id',
         defaultSortOrder: 'ascend',
-        sorter: (a, b) => a.id - b.id,
+        sorter: (a, b) => (!a.favorite && !b.favorite) ? a.id - b.id : a.favorite ? -1 : 1,
         ...this.getColumnSearchProps('id')
       }, 
       {
@@ -109,7 +109,7 @@ class App extends Component {
         key: 'address',
         dataIndex: 'address',
         defaultSortOrder: 'ascend',
-        sorter: (a, b) => a.address.length - b.address.length,
+        sorter: (a, b) => (!a.favorite && !b.favorite) ? a.address.length - b.address.length : a.favorite ? -1 : 1,
         ...this.getColumnSearchProps('address')
       }, 
       {
@@ -117,21 +117,21 @@ class App extends Component {
         key: 'price',
         dataIndex: 'price',
         defaultSortOrder: 'ascend',
-        sorter: (a, b) => a.price - b.price,
+        sorter: (a, b) => (!a.favorite && !b.favorite) ? a.price - b.price : a.favorite ? -1 : 1,
       },
       {
         title: 'Last Update',
         key: 'lastUpdate',
         dataIndex: 'lastUpdate',
         defaultSortOrder: 'ascend',
-        sorter: (a, b) => a.lastUpdate - b.lastUpdate,
+        sorter: (a, b) => (!a.favorite && !b.favorite) ? a.lastUpdate - b.lastUpdate : a.favorite ? -1 : 1,
       },
       {
         title: 'Type',
         key: 'type',
         dataIndex: 'type',
         defaultSortOrder: 'ascend',
-        sorter: (a, b) => a.type.length - b.type.length,
+        sorter: (a, b) => (!a.favorite && !b.favorite) ? a.type.length - b.type.length : a.favorite ? -1 : 1,
         ...this.getColumnSearchProps('type')
       },
       {
